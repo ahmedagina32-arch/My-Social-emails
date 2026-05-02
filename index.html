@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Links</title>
+
+  <!-- ⭐ Font Awesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #141e30, #243b55);
+    }
+
+    /* 🫧 الفقاقيع */
+    .bubbles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bubbles span {
+      position: absolute;
+      bottom: -60px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      animation: rise 8s linear infinite;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      padding: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    img {
+      width: 300px;
+      border-radius: 50%;
+      margin-top: 50px;
+    }
+
+    h1 {
+      margin: 10px 0;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* ⭐ تعديل بسيط */
+      
+      background: white;
+      color: black;
+      text-decoration: none;
+      padding: 15px;
+      margin: 10px auto;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .link:hover {
+      background: #ddd;
+      transform: scale(1.05);
+    }
+
+    .link i {
+      font-size: 22px; /* ⭐ تكبير بسيط */
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🫧 الفقاقيع -->
+  <div class="bubbles"></div>
+
+  <div class="container">
+    <img src="img.jpg" alt="profile">
+
+    <h1>Ahmed Ehab Agina</h1>
+    <p>my emails</p>
+
+    <a class="link" href="https://www.instagram.com/ahmed_ehab_agina">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <a class="link" href="https://www.facebook.com/share/1DRM6tU3mm/">
+      <i class="fab fa-facebook"></i> Facebook
+    </a>
+
+    <a class="link" href="https://youtube.com/@learningbox_edu?si=l16k5fSIfRNxwFi1">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+
+    <a class="link" href="https://x.com/Ahmed37031">
+      <i class="fab fa-x-twitter"></i> X
+    </a>
+
+    <a class="link" href="https://www.tiktok.com/@ahmedagina11?_r=1&_t=ZS-9629nGZ6vpN">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+
+    <a class="link" href="https://wa.me/qr/GOH5OTNKXAMOP1">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <footer>
+      Made with ❤️ by Ahmed Ehab Agina
+    </footer>
+  </div>
+
+  <!-- 🫧 JavaScript الفقاقيع -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let bubble = document.createElement("span");
+
+      bubble.style.left = Math.random() * 100 + "vw";
+      bubble.style.width = bubble.style.height = (10 + Math.random() * 25) + "px";
+      bubble.style.animationDuration = (4 + Math.random() * 6) + "s";
+
+      document.querySelector(".bubbles").appendChild(bubble);
+    }
+  </script>
+
+</body>
+</html>
